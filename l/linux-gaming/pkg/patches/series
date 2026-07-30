@@ -107,7 +107,7 @@ gaming/0015-ASoC-amd-acp-Use-correct-DAI-link-ID-for-BT-codec.patch
 gaming/0016-wifi-ath11k-Rename-QCA2066-fw-dir-to-QCA206X.patch
 
 # OrangePi patches
-iio/0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
+iio/0001-iio-imu-bmi270-Match-PNP-ID-found-on-newer-OrangePi-NEO-firmware.patch
 
 # ZOTAC patches by Luke and Philip
 zotac/0001-zotac-zone-hid-initial-impl.patch
