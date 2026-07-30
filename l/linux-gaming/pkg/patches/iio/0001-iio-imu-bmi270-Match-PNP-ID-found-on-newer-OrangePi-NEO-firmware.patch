@@ -1,15 +1,29 @@
---- a/drivers/iio/imu/bmi270/bmi270_i2c.c	2026-07-30 16:16:29.446553201 +0200
-+++ b/drivers/iio/imu/bmi270/bmi270_i2c.c	2026-07-30 16:22:22.710076622 +0200
-@@ -41,8 +41,11 @@ MODULE_DEVICE_TABLE(i2c, bmi270_i2c_id);
+From 333c6e58b59f791f7930e3f51cb71cebaedb10d6 Mon Sep 17 00:00:00 2001
+From: Philip Mueller <philm@manjaro.org>
+Date: Thu, 30 Jul 2026 18:44:54 +0200
+Subject: [PATCH] [FOR-UPSTREAM] iio: imu: bmi270: Match PNP ID found on gaming
+ handheld firmwares
+
+---
+ drivers/iio/imu/bmi270/bmi270_i2c.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iio/imu/bmi270/bmi270_i2c.c b/drivers/iio/imu/bmi270/bmi270_i2c.c
+index b92da4e0776fa..8ab02eb59f6b7 100644
+--- a/drivers/iio/imu/bmi270/bmi270_i2c.c
++++ b/drivers/iio/imu/bmi270/bmi270_i2c.c
+@@ -42,8 +42,13 @@ MODULE_DEVICE_TABLE(i2c, bmi270_i2c_id);
  static const struct acpi_device_id bmi270_acpi_match[] = {
  	/* GPD Win Mini, Aya Neo AIR Pro, OXP Mini Pro, etc. */
  	{ "BMI0160",  (kernel_ulong_t)&bmi260_chip_info },
 -	/* GPD Win Max 2 2023(sincice BIOS v0.40), etc. */
 +	{ "BOSC0160", (kernel_ulong_t)&bmi260_chip_info },
-+	/* GPD Win Max 2 2023(since BIOS v0.40), etc. */
++	/* GPD Win Max 2 2023 (since BIOS v0.40), etc. */
  	{ "BMI0260",  (kernel_ulong_t)&bmi260_chip_info },
 +	/* OrangePi Neo 2026 (since BIOS BCPH01_V1.20), etc. */
 +	{ "BOSC0260", (kernel_ulong_t)&bmi260_chip_info },
++	/* OneXPlayer X1 Pro (AMD), etc. */
++	{ "10EC5280", (kernel_ulong_t)&bmi260_chip_info },
  	{ }
  };
  MODULE_DEVICE_TABLE(acpi, bmi270_acpi_match);
