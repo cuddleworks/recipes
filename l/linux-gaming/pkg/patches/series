@@ -106,6 +106,9 @@ gaming/0014-ASoC-max98388-Fix-power-on-when-resuming-from-suspen.patch
 gaming/0015-ASoC-amd-acp-Use-correct-DAI-link-ID-for-BT-codec.patch
 gaming/0016-wifi-ath11k-Rename-QCA2066-fw-dir-to-QCA206X.patch
 
+# OrangePi patches
+iio/0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
+
 # ZOTAC patches by Luke and Philip
 zotac/0001-zotac-zone-hid-initial-impl.patch
 zotac/0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
